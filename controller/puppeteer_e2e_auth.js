@@ -5,9 +5,7 @@ const endToEndWrapper = async (req, res) => {
   try {
     await endToEnd()
 
-    res.status(200).json({
-      message: "Success"
-    })
+    res.status(200).send("Success")
   }
   catch (err) {
     console.log(err)
@@ -17,19 +15,19 @@ const endToEndWrapper = async (req, res) => {
   }
 }
 
-const endToEnd = async (req, res) => {
+const endToEnd = async () => {
   console.log("Starting e2e...")
 
-      const browser = await puppeteer.launch({ 
-        args: [ 
-          '--no-sandbox', 
-          '--disable-setuid-sandbox'
-        ], 
-        headless: true, 
-        ignoreHTTPSErrors: true, 
-      });
+      // const browser = await puppeteer.launch({ 
+      //   args: [ 
+      //     '--no-sandbox', 
+      //     '--disable-setuid-sandbox'
+      //   ], 
+      //   headless: true, 
+      //   ignoreHTTPSErrors: true, 
+      // });
       // const browser = await puppeteer.launch();
-      // const browser = await puppeteer.launch({ headless: false }); // default is true
+      const browser = await puppeteer.launch({ headless: false }); // default is true
       const page = await browser.newPage();
       const timeout = 20000;
       page.setDefaultTimeout(timeout);
@@ -86,5 +84,6 @@ async function delay(time) {
 }
 
 module.exports = {
-  endToEndWrapper
+  endToEndWrapper,
+  endToEnd
 }

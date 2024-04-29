@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const puppeteer = require('puppeteer'); // v22.0.0 or later
 
 async function delay(time) {
@@ -7,7 +9,15 @@ async function delay(time) {
 }
 
 (async () => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ 
+      args: [ 
+        '--disable-web-security', 
+        '--enable-features=NetworkService', 
+      ], 
+      headless: true, 
+      ignoreHTTPSErrors: true, 
+    });
+    // const browser = await puppeteer.launch();
     // const browser = await puppeteer.launch({ headless: false }); // default is true
     const page = await browser.newPage();
     const timeout = 20000;

@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "description": "E2E Testing for Capstone-Auth",
   "scripts": {
-    "start": "node puppeteer_e2e_auth"
+    "e2e": "node puppeteer_e2e_auth",
+    "start": "node server"
   },
   "keywords": [],
   "author": "John Liu",
   "license": "MIT",
   "devDependencies": {
     "puppeteer": "^22.7.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
   }
 }

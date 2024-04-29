@@ -22,8 +22,8 @@ const endToEnd = async (req, res) => {
 
       const browser = await puppeteer.launch({ 
         args: [ 
-          '--disable-web-security', 
-          '--enable-features=NetworkService', 
+          '--no-sandbox', 
+          '--disable-setuid-sandbox'
         ], 
         headless: true, 
         ignoreHTTPSErrors: true, 

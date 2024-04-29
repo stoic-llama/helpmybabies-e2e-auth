@@ -1,0 +1,14 @@
+{
+  "name": "helpmybabies-e2e-auth",
+  "version": "1.0.0",
+  "description": "E2E Testing for Capstone-Auth",
+  "scripts": {
+    "start": "node puppeteer_e2e_auth"
+  },
+  "keywords": [],
+  "author": "John Liu",
+  "license": "MIT",
+  "devDependencies": {
+    "puppeteer": "^22.7.1"
+  }
+}

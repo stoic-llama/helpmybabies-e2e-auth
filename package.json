@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "E2E Testing for Capstone-Auth",
   "scripts": {
-    "e2e": "node puppeteer_e2e_auth",
+    "e2e": "node controller/puppeteer_e2e_auth",
     "start": "node server"
   },
   "keywords": [],

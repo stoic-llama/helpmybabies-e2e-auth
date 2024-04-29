@@ -6,7 +6,7 @@ const endToEndWrapper = async (req, res) => {
     await endToEnd()
 
     res.status(200).json({
-      message: "test completed"
+      message: "Success"
     })
   }
   catch (err) {
